@@ -594,31 +594,26 @@ namespace NugetForUnity
             if (alreadyImportedLibs == null)
             {
                 //根据unity默认创建的
-                // var blackList = new List<string>();
-                // var dllList = new List<string>();
-                // var csList = new List<string>();
-                // var defiendList = new List<string>();
-                // var runtimeCsproj = Application.dataPath + "/../Assembly-CSharp.csproj";
-                // var editorCsproj = Application.dataPath + "/../Assembly-CSharp-Editor.csproj";
-                //
-                // CsprojFileHelper.ParseCsprojFile(runtimeCsproj,blackList,ref csList,ref dllList,ref defiendList);
-                // CsprojFileHelper.ParseCsprojFile(editorCsproj,blackList,ref csList,ref dllList,ref defiendList);
-                //
-                // alreadyImportedLibs = new HashSet<string>();
-                //
-                // foreach (var dp in dllList)
+                var blackList = new List<string>();
+                var dllList = new List<string>();
+                var csList = new List<string>();
+                var defiendList = new List<string>();
+                var runtimeCsproj = Application.dataPath + "/../Assembly-CSharp.csproj";
+                var editorCsproj = Application.dataPath + "/../Assembly-CSharp-Editor.csproj";
+                
+                CsprojFileHelper.ParseCsprojFile(runtimeCsproj,blackList,ref csList,ref dllList,ref defiendList);
+                CsprojFileHelper.ParseCsprojFile(editorCsproj,blackList,ref csList,ref dllList,ref defiendList);
+                
+                alreadyImportedLibs = new HashSet<string>(dllList);
+                
+                // string[] lookupPaths = GetAllLookupPaths();
+                // IEnumerable<string> libNames = lookupPaths
+                //     .SelectMany(directory => Directory.EnumerateFiles(directory, "*.dll", SearchOption.AllDirectories));
+                // alreadyImportedLibs = new HashSet<string>(libNames);
+                // foreach (var lib in alreadyImportedLibs)
                 // {
-                //     var filename = Path.GetFileName(dp);
-                //     alreadyImportedLibs.Add(filename);
+                //     Debug.Log(lib);
                 // }
-                string[] lookupPaths = GetAllLookupPaths();
-                IEnumerable<string> libNames = lookupPaths
-                    .SelectMany(directory => Directory.EnumerateFiles(directory, "*.dll", SearchOption.AllDirectories));
-                alreadyImportedLibs = new HashSet<string>(libNames);
-                foreach (var lib in alreadyImportedLibs)
-                {
-                    Debug.Log(lib);
-                }
                 LogVerbose("Already imported libs: {0}", string.Join(", ", alreadyImportedLibs));
             }
 
