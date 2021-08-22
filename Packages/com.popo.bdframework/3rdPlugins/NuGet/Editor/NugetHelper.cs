@@ -615,6 +615,10 @@ namespace NugetForUnity
                 IEnumerable<string> libNames = lookupPaths
                     .SelectMany(directory => Directory.EnumerateFiles(directory, "*.dll", SearchOption.AllDirectories));
                 alreadyImportedLibs = new HashSet<string>(libNames);
+                foreach (var lib in alreadyImportedLibs)
+                {
+                    Debug.Log(lib);
+                }
                 LogVerbose("Already imported libs: {0}", string.Join(", ", alreadyImportedLibs));
             }
 
