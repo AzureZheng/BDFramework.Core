@@ -8,6 +8,7 @@ using BDFramework;
 using BDFramework.AssetHelper;
 using Debug = UnityEngine.Debug;
 using BDFramework.Core.Tools;
+using BDFramework.Tool;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Emit;
@@ -89,14 +90,12 @@ public class ScriptBuildTools
         //所有宏
         defineList = new List<string>();
 
-        var gameLogicCsproj = "Assembly-CSharp.csproj"; //游戏逻辑的代码
-        var frameworkCsproj = "BDFramework.Core.csproj"; //框架部分的代码
-        ParseCsprojFile(gameLogicCsproj, new List<string>() {frameworkCsproj}, ref csFileList, ref dllFileList);
-        ParseCsprojFile(frameworkCsproj, new List<string>(), ref csFileList, ref dllFileList);
-        //去重
-        dllFileList = dllFileList.Distinct().ToList();
-        csFileList = csFileList.Distinct().ToList();
-        defineList = defineList.Distinct().ToList();
+        var gameLogicCsproj =BDApplication.ProjectRoot + "/Assembly-CSharp.csproj"; //游戏逻辑的代码
+        var frameworkCsproj = BDApplication.ProjectRoot + "/BDFramework.Core.csproj"; //框架部分的代码
+        
+        CsprojFileHelper.ParseCsprojFile(gameLogicCsproj, new List<string>() {"BDFramework.Core.csproj"}, ref csFileList, ref dllFileList,ref defineList);
+        CsprojFileHelper.ParseCsprojFile(frameworkCsproj, new List<string>(), ref csFileList, ref dllFileList,ref defineList);
+
 
         //宏解析
         //移除editor相关宏
@@ -207,101 +206,15 @@ public class ScriptBuildTools
         }
 
         if (IsShowTips)
+        {
             EditorUtility.DisplayProgressBar("编译服务", "清理临时文件", 0.9f);
+        }
         File.Delete(baseDll);
         if (IsShowTips)
+        {
             EditorUtility.ClearProgressBar();
+        }
         AssetDatabase.Refresh();
-    }
-
-
-    /// <summary>
-    /// 解析project
-    /// 获取里面的dll和cs
-    /// </summary>
-    /// <returns></returns>
-    static void ParseCsprojFile(string projName,
-        List<string> blackCspList,
-        ref List<string> csList,
-        ref List<string> dllList)
-    {
-        var projpath = BDApplication.ProjectRoot + "/" + projName;
-        List<string> csprojList = new List<string>();
-
-        #region 解析xml
-
-        XmlDocument xml = new XmlDocument();
-        xml.Load(projpath);
-        XmlNode ProjectNode = null;
-        foreach (XmlNode x in xml.ChildNodes)
-        {
-            if (x.Name == "Project")
-            {
-                ProjectNode = x;
-                break;
-            }
-        }
-
-        foreach (XmlNode childNode in ProjectNode.ChildNodes)
-        {
-            if (childNode.Name == "ItemGroup")
-            {
-                foreach (XmlNode item in childNode.ChildNodes)
-                {
-                    if (item.Name == "Compile") //cs 引用
-                    {
-                        var csproj = item.Attributes[0].Value;
-                        csList.Add(csproj);
-                    }
-                    else if (item.Name == "Reference") //DLL 引用
-                    {
-                        var HintPath = item.FirstChild;
-                        var dir = HintPath.InnerText.Replace("/", "\\");
-                        dllList.Add(dir);
-                    }
-                    else if (item.Name == "ProjectReference") //工程引用
-                    {
-                        var csproj = item.Attributes[0].Value;
-                        csprojList.Add(csproj);
-                    }
-                }
-            }
-            else if (childNode.Name == "PropertyGroup")
-            {
-                foreach (XmlNode item in childNode.ChildNodes)
-                {
-                    if (item.Name == "DefineConstants")
-                    {
-                        var define = item.InnerText;
-
-                        var defines = define.Split(';');
-
-                        defineList.AddRange(defines);
-                    }
-                }
-            }
-        }
-
-        #endregion
-
-        //csproj也加入
-        foreach (var csproj in csprojList)
-        {
-            //有editor退出
-            if (csproj.ToLower().Contains("editor") || blackCspList.Contains(csproj))
-            {
-                continue;
-            }
-
-            //
-            var gendll = BDApplication.Library + "/ScriptAssemblies/" + csproj.Replace(".csproj", ".dll");
-            if (!File.Exists(gendll))
-            {
-                Debug.LogError("不存在:" + gendll);
-            }
-
-            dllList?.Add(gendll);
-        }
     }
 
 

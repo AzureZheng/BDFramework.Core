@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using BDFramework.Reflection;
-using ILRuntime.Runtime.Generated;
-using LitJson;
 using UnityEngine;
 
 namespace BDFramework.UnitTest
