@@ -16,22 +16,18 @@ namespace NugetForUnity
     using UnityEngine;
     using Debug = UnityEngine.Debug;
 
-    
 
-    public  class NuGetAssetImpoter : AssetPostprocessor
+    public class NuGetAssetImpoter : AssetPostprocessor
     {
-
         static void OnPostprocessAllAssets(string[] importedAssets,
             string[] deletedAssets,
             string[] movedAssets,
             string[] movedFromAssetPaths)
         {
-            
         }
-
     }
-    
-    
+
+
     /// <summary>
     /// A set of helper methods that act as a wrapper around nuget.exe
     /// 
@@ -589,11 +585,32 @@ namespace NugetForUnity
 
         private static HashSet<string> alreadyImportedLibs = null;
 
-        private static HashSet<string>
-            GetAlreadyImportedLibs()
+        /// <summary>
+        /// 获取已存在的lib
+        /// </summary>
+        /// <returns></returns>
+        private static HashSet<string> GetAlreadyImportedLibs()
         {
             if (alreadyImportedLibs == null)
             {
+                //根据unity默认创建的
+                // var blackList = new List<string>();
+                // var dllList = new List<string>();
+                // var csList = new List<string>();
+                // var defiendList = new List<string>();
+                // var runtimeCsproj = Application.dataPath + "/../Assembly-CSharp.csproj";
+                // var editorCsproj = Application.dataPath + "/../Assembly-CSharp-Editor.csproj";
+                //
+                // CsprojFileHelper.ParseCsprojFile(runtimeCsproj,blackList,ref csList,ref dllList,ref defiendList);
+                // CsprojFileHelper.ParseCsprojFile(editorCsproj,blackList,ref csList,ref dllList,ref defiendList);
+                //
+                // alreadyImportedLibs = new HashSet<string>();
+                //
+                // foreach (var dp in dllList)
+                // {
+                //     var filename = Path.GetFileName(dp);
+                //     alreadyImportedLibs.Add(filename);
+                // }
                 string[] lookupPaths = GetAllLookupPaths();
                 IEnumerable<string> libNames = lookupPaths
                     .SelectMany(directory => Directory.EnumerateFiles(directory, "*.dll", SearchOption.AllDirectories));
@@ -782,9 +799,11 @@ namespace NugetForUnity
 
         public static string TryGetBestTargetFrameworkForCurrentSettings(IEnumerable<string> targetFrameworks)
         {
-           
             //bool using46 = DotNetVersion == ApiCompatibilityLevel.NET_4_6; // NET_4_6 option was added in Unity 5.6
-            bool  using46 = DotNetVersion == ApiCompatibilityLevel.NET_4_6; // NET_4_6 = 3 in Unity 5.6 and Unity 2017.1 - use the hard-coded int value to ensure it works in earlier versions of Unity
+            bool
+                using46 = DotNetVersion ==
+                          ApiCompatibilityLevel
+                              .NET_4_6; // NET_4_6 = 3 in Unity 5.6 and Unity 2017.1 - use the hard-coded int value to ensure it works in earlier versions of Unity
             bool usingStandard2 = DotNetVersion == ApiCompatibilityLevel.NET_Standard_2_0; // using .net standard 2.0
 
             var frameworkGroups = new List<string[]> {unityFrameworks};
@@ -989,7 +1008,7 @@ namespace NugetForUnity
             // recursively delete the directory
             directoryInfo.Delete(true);
         }
-        
+
         /// <summary>
         /// Deletes a file at the given filepath.
         /// </summary>
@@ -1114,7 +1133,10 @@ namespace NugetForUnity
         /// Gets the dictionary of packages that are actually installed in the project, keyed off of the ID.
         /// </summary>
         /// <returns>A dictionary of installed <see cref="NugetPackage"/>s.</returns>
-        public static IEnumerable<NugetPackage> InstalledPackages { get { return installedPackages.Values; } }
+        public static IEnumerable<NugetPackage> InstalledPackages
+        {
+            get { return installedPackages.Values; }
+        }
 
         /// <summary>
         /// Updates the dictionary of packages that are actually installed in the project based on the files that are currently installed.
@@ -1586,7 +1608,7 @@ namespace NugetForUnity
                     var targetNupkg = Path.Combine(baseDirectory,
                         string.Format("{0}.{1}.nupkg", package.Id, package.Version));
                     File.Copy(cachedPackagePath, targetNupkg, true);
-                    
+
                     //1.判断AnalyzerPackage
                     var installPS1 = baseDirectory + "\\tools\\install.ps1";
                     if (File.Exists(installPS1))
@@ -1598,7 +1620,7 @@ namespace NugetForUnity
                             if (!includeDllList.Contains(dll))
                             {
                                 File.Delete(dll);
-                                File.WriteAllText( dll+"_delete" , ""); //替换掉
+                                File.WriteAllText(dll + "_delete", ""); //替换掉
                             }
                         }
                     }
@@ -1622,7 +1644,7 @@ namespace NugetForUnity
                                 foreach (var dll in dlls)
                                 {
                                     File.Delete(dll);
-                                    File.WriteAllText( dll+"_delete" , ""); //替换掉
+                                    File.WriteAllText(dll + "_delete", ""); //替换掉
                                 }
                             }
                         }
