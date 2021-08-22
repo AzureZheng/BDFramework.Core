@@ -784,7 +784,7 @@ namespace NugetForUnity
             "netstandard11", "netstandard10"
         };
 
-        private static readonly string[] net4Unity2018Frameworks = new string[] {"net471", "net47"};
+        private static readonly string[] net4Unity2018Frameworks = new string[] {"net472","net471", "net47"};
 
         private static readonly string[] net4Unity2017Frameworks = new string[]
         {
@@ -810,6 +810,8 @@ namespace NugetForUnity
             if (usingStandard2)
             {
                 frameworkGroups.Add(netStandardFrameworks);
+                frameworkGroups.Add(net4Unity2018Frameworks);
+                frameworkGroups.Add(net4Unity2017Frameworks);
             }
             else if (using46)
             {

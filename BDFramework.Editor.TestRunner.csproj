@@ -367,6 +367,30 @@
  <Reference Include="Microsoft.Build.Framework">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.Build.Framework.16.11.0/lib/netstandard2.0/Microsoft.Build.Framework.dll</HintPath>
  </Reference>
+ <Reference Include="Microsoft.NET.StringTools">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.NET.StringTools.1.0.0/lib/netstandard2.0/Microsoft.NET.StringTools.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.Cryptography.ProtectedData">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Security.Cryptography.ProtectedData.4.7.0/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Configuration.ConfigurationManager">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Configuration.ConfigurationManager.4.7.0/lib/netstandard2.0/System.Configuration.ConfigurationManager.dll</HintPath>
+ </Reference>
+ <Reference Include="Microsoft.Bcl.AsyncInterfaces">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.1.1.0/lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Text.Encodings.Web">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Text.Encodings.Web.4.7.0/lib/netstandard2.0/System.Text.Encodings.Web.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Text.Json">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Text.Json.4.7.0/lib/netstandard2.0/System.Text.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Threading.Tasks.Dataflow">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Threading.Tasks.Dataflow.4.9.0/lib/netstandard2.0/System.Threading.Tasks.Dataflow.dll</HintPath>
+ </Reference>
+ <Reference Include="Microsoft.Build">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.Build.16.11.0/lib/net472/Microsoft.Build.dll</HintPath>
+ </Reference>
  <Reference Include="nunit.framework">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
