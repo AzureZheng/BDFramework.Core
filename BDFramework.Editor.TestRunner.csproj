@@ -355,6 +355,18 @@
  <Reference Include="ICSharpCode.NRefactory">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Library/PackageCache/com.unity.render-pipelines.core@7.6.0/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
  </Reference>
+ <Reference Include="System.Security.Principal.Windows">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Security.Principal.Windows.4.7.0/lib/netstandard2.0/System.Security.Principal.Windows.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.AccessControl">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Security.AccessControl.4.7.0/lib/netstandard2.0/System.Security.AccessControl.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.Permissions">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Security.Permissions.4.7.0/lib/netstandard2.0/System.Security.Permissions.dll</HintPath>
+ </Reference>
+ <Reference Include="Microsoft.Build.Framework">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.Build.Framework.16.11.0/lib/netstandard2.0/Microsoft.Build.Framework.dll</HintPath>
+ </Reference>
  <Reference Include="nunit.framework">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
