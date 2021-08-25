@@ -396,6 +396,15 @@
  <Reference Include="DOTweenEditor">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/3rdPlugins/Dotween/DOTween/Editor/DOTweenEditor.dll</HintPath>
  </Reference>
+ <Reference Include="Microsoft.Bcl.AsyncInterfaces">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.1.1.0/lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+ </Reference>
+ <Reference Include="Microsoft.Build">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.Build.16.11.0/lib/net472/Microsoft.Build.dll</HintPath>
+ </Reference>
+ <Reference Include="Microsoft.Build.Framework">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.Build.Framework.16.11.0/lib/netstandard2.0/Microsoft.Build.Framework.dll</HintPath>
+ </Reference>
  <Reference Include="Microsoft.CodeAnalysis.Analyzers">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.2/analyzers/dotnet/cs/Microsoft.CodeAnalysis.Analyzers.dll</HintPath>
  </Reference>
@@ -408,11 +417,17 @@
  <Reference Include="Microsoft.CodeAnalysis.CSharp">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.CodeAnalysis.CSharp.3.10.0/lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll</HintPath>
  </Reference>
+ <Reference Include="Microsoft.NET.StringTools">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.NET.StringTools.1.0.0/lib/netstandard2.0/Microsoft.NET.StringTools.dll</HintPath>
+ </Reference>
  <Reference Include="System.Buffers">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Buffers.4.5.1/lib/netstandard2.0/System.Buffers.dll</HintPath>
  </Reference>
  <Reference Include="System.Collections.Immutable">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Collections.Immutable.5.0.0/lib/netstandard2.0/System.Collections.Immutable.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Configuration.ConfigurationManager">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Configuration.ConfigurationManager.4.7.0/lib/netstandard2.0/System.Configuration.ConfigurationManager.dll</HintPath>
  </Reference>
  <Reference Include="System.Memory">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Memory.4.5.4/lib/netstandard2.0/System.Memory.dll</HintPath>
@@ -423,8 +438,29 @@
  <Reference Include="System.Runtime.CompilerServices.Unsafe">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Runtime.CompilerServices.Unsafe.5.0.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
  </Reference>
+ <Reference Include="System.Security.AccessControl">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Security.AccessControl.4.7.0/lib/netstandard2.0/System.Security.AccessControl.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.Cryptography.ProtectedData">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Security.Cryptography.ProtectedData.4.7.0/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.Permissions">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Security.Permissions.4.7.0/lib/netstandard2.0/System.Security.Permissions.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.Principal.Windows">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Security.Principal.Windows.4.7.0/lib/netstandard2.0/System.Security.Principal.Windows.dll</HintPath>
+ </Reference>
  <Reference Include="System.Text.Encoding.CodePages">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Text.Encoding.CodePages.4.5.1/lib/netstandard2.0/System.Text.Encoding.CodePages.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Text.Encodings.Web">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Text.Encodings.Web.4.7.0/lib/netstandard2.0/System.Text.Encodings.Web.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Text.Json">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Text.Json.4.7.0/lib/netstandard2.0/System.Text.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Threading.Tasks.Dataflow">
+ <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Threading.Tasks.Dataflow.4.9.0/lib/netstandard2.0/System.Threading.Tasks.Dataflow.dll</HintPath>
  </Reference>
  <Reference Include="System.Threading.Tasks.Extensions">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Threading.Tasks.Extensions.4.5.4/lib/netstandard2.0/System.Threading.Tasks.Extensions.dll</HintPath>
@@ -476,42 +512,6 @@
  </Reference>
  <Reference Include="ICSharpCode.NRefactory">
  <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Library/PackageCache/com.unity.render-pipelines.core@7.6.0/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
- </Reference>
- <Reference Include="System.Security.Principal.Windows">
- <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Security.Principal.Windows.4.7.0/lib/netstandard2.0/System.Security.Principal.Windows.dll</HintPath>
- </Reference>
- <Reference Include="System.Security.AccessControl">
- <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Security.AccessControl.4.7.0/lib/netstandard2.0/System.Security.AccessControl.dll</HintPath>
- </Reference>
- <Reference Include="System.Security.Permissions">
- <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Security.Permissions.4.7.0/lib/netstandard2.0/System.Security.Permissions.dll</HintPath>
- </Reference>
- <Reference Include="Microsoft.Build.Framework">
- <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.Build.Framework.16.11.0/lib/netstandard2.0/Microsoft.Build.Framework.dll</HintPath>
- </Reference>
- <Reference Include="Microsoft.NET.StringTools">
- <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.NET.StringTools.1.0.0/lib/netstandard2.0/Microsoft.NET.StringTools.dll</HintPath>
- </Reference>
- <Reference Include="System.Security.Cryptography.ProtectedData">
- <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Security.Cryptography.ProtectedData.4.7.0/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll</HintPath>
- </Reference>
- <Reference Include="System.Configuration.ConfigurationManager">
- <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Configuration.ConfigurationManager.4.7.0/lib/netstandard2.0/System.Configuration.ConfigurationManager.dll</HintPath>
- </Reference>
- <Reference Include="Microsoft.Bcl.AsyncInterfaces">
- <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.1.1.0/lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
- </Reference>
- <Reference Include="System.Text.Encodings.Web">
- <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Text.Encodings.Web.4.7.0/lib/netstandard2.0/System.Text.Encodings.Web.dll</HintPath>
- </Reference>
- <Reference Include="System.Text.Json">
- <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Text.Json.4.7.0/lib/netstandard2.0/System.Text.Json.dll</HintPath>
- </Reference>
- <Reference Include="System.Threading.Tasks.Dataflow">
- <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/System.Threading.Tasks.Dataflow.4.9.0/lib/netstandard2.0/System.Threading.Tasks.Dataflow.dll</HintPath>
- </Reference>
- <Reference Include="Microsoft.Build">
- <HintPath>C:/Users/Administrator/Desktop/Github/BDFramework/Assets/Packages/Microsoft.Build.16.11.0/lib/net472/Microsoft.Build.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.29f1c1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

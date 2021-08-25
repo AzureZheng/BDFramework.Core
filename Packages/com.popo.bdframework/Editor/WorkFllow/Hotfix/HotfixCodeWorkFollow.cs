@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using BDFramework.Core.Tools;
+using Microsoft.Build.Construction;
 using UnityEngine;
 
 namespace BDFramework.Editor.WorkFollow
@@ -62,13 +63,22 @@ namespace BDFramework.Editor.WorkFollow
         /// <param name="file"></param>
         static void AddCSFileToHotfix()
         {
-            // var sln = Directory.GetFiles(BDApplication.ProjectRoot, "*.sln");
-            // var slution = SolutionFile.Parse(sln[0]);
+            var sln = BDApplication.ProjectRoot+ "/Assembly-CSharp.csproj";
+           // var slution = SolutionFile.Parse(sln[0]);
+            var proj = ProjectRootElement.Open(sln);
+
+            foreach (var itemGroup in proj.ItemGroups)
+            {
+                foreach (var itemElement in itemGroup.Items)
+                {
+                    Debug.Log(itemElement.Include);
+                }
+            }
             // foreach (var project in slution.ProjectsInOrder)
             // {
-            //     //project.
+            //     project.
             // }
-            
+            //
         }
     }
 }
