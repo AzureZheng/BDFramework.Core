@@ -59,8 +59,7 @@ namespace BDFramework.Editor
         /// </summary>
         static public void AutoOpen()
         {
-            if (!IsTodayOpened() //今天打开过
-                || IsHaveNewVerison() //新版本
+            if (IsHasNewVerison() //新版本
                 || !IsExsitOdin() || !IsImportedAsset() //缺少文件
             )
             {
@@ -283,7 +282,7 @@ namespace BDFramework.Editor
             }
             GUILayout.Label("当前版本:" + version);
             //
-            if (IsHaveNewVerison())
+            if (IsHasNewVerison())
             {
                 GUI.color = Color.red;
                 GUILayout.Label("最新版本:" + NewVersionNum);
@@ -304,7 +303,7 @@ namespace BDFramework.Editor
         /// 是否有新版本
         /// </summary>
         /// <returns></returns>
-        static public bool IsHaveNewVerison()
+        static public bool IsHasNewVerison()
         {
             if (NewVersionNum == null)
             {
@@ -350,7 +349,7 @@ namespace BDFramework.Editor
         void GetNewChangeLog()
         {
             //有新版本则拉取服务器上的
-            if (IsHaveNewVerison())
+            if (IsHasNewVerison())
             {
                 var newLogPath = Path.Combine(BDApplication.BDEditorCachePath, "VersionLog_" + NewVersionNum);
                 //本地不存在就缓存到本地
