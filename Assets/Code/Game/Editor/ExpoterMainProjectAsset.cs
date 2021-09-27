@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using BDFramework.Core.Tools;
 using BDFramework.Editor;
+using BDFramework.Editor.UnityEx;
 using UnityEditor;
 using UnityEngine;
 
@@ -62,5 +63,16 @@ public class ExpoterMainProjectAsset
         EditorWindow_ScriptBuildDll.GenCLRBindingByAnalysis();
         //debug
         Debug.Log("导出成功:" + packagePath);
+    }
+
+
+    [MenuItem("BDFrame开发辅助/Test")]
+    static void Test()
+    {
+
+        var test = new SimpleUnityCsprojParser(BDApplication.ProjectRoot +"/Assembly-CSharp.csproj");
+        test.GetHofixCs();
+        test.GenBDWorkSpaceHotfixCsprojSln(BDApplication.BDWorkSpaceHotFixCode);
+        test.SaveCsproj(BDApplication.BDWorkSpaceHotFixCode +"/HotfixCode.csproj");
     }
 }

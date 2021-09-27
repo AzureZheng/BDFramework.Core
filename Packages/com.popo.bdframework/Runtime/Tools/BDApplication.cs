@@ -29,7 +29,10 @@ namespace BDFramework.Core.Tools
         /// BD Assets目录以外的workspace目录
         /// </summary>
         static public string BDWorkSpace { get; private set; }
-
+        /// <summary>
+        /// BD Assets目录以外的workspace目录
+        /// </summary>
+        static public string BDWorkSpaceHotFixCode { get; private set; }
         /// <summary>
         /// Library
         /// </summary>
@@ -38,8 +41,8 @@ namespace BDFramework.Core.Tools
         /// <summary>
         /// Package目录
         /// </summary>
-        static public string Package { get;private set; }
-        
+        static public string Package { get; private set; }
+
         /// <summary>
         /// 资源的根目录
         /// </summary>
@@ -66,12 +69,16 @@ namespace BDFramework.Core.Tools
             ProjectRoot = Application.dataPath.Replace("/Assets", "");
             Library = ProjectRoot + "/Library";
             Package = ProjectRoot + "/Package";
-            BDWorkSpace = ProjectRoot + "/BDWorkSpace";
+            //BD空间
+            BDWorkSpace = "BDWorkSpace";
+            BDWorkSpaceHotFixCode = "BDWorkSpace/HotfixCode";
+            BDEditorCachePath = Library + "/BDFrameCache";
+            //Runtime目录
             RuntimeResourceLoadPath = "Assets/Resource/Runtime";
             //editor相关目录
             EditorResourcePath = "Assets/Resource_SVN";
             EditorResourceRuntimePath = EditorResourcePath + "/Runtime";
-            BDEditorCachePath = Library + "/BDFrameCache";
+
         }
 
         /// <summary>

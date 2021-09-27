@@ -43,6 +43,7 @@ namespace BDFramework.Tool
                     {
                         if (item.Name == "Compile") //cs 引用
                         {
+                            
                             var csproj = item.Attributes[0].Value;
                             csList.Add(csproj);
                         }
