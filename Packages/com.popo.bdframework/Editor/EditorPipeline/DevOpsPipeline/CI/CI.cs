@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using BDFramework.Editor;
 
-namespace Editor.EditorPipeline.DevOps
+namespace BDFramework.Editor.DevOps
 {
     public class CIAttribute : Attribute
     {

@@ -4,7 +4,6 @@ using System.IO;
 using System.Reflection;
 using BDFramework.Core.Tools;
 using BDFramework.ResourceMgr;
-using Editor.EditorPipeline.DevOps;
 using UnityEngine;
 
 namespace BDFramework.Editor.DevOps
